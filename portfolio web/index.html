@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Welcome to <span>My Portfolio</span></a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <!-- header ends here -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Shravan Kumar</h1>
+            <h3>And I'm a <span class="tube">Full Stack Developer</span></h3>
+            <p>This is a self-made portfolio to showcase my skills.</p>
+            <div class="social-media">
+                <a href="https://github.com/shravankumar006"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/shravan-kumar-293659239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://x.com/Shravan05442443?t=SM8xXOdcDI4TK9zMXZo7yQ&s=08"><i class="bx bxl-twitter"></i></a>
+            </div>
+            <div class="cv-selector">
+                <select id="cvSelect">
+                    <option value="">Select CV Type</option>
+                    <option value="sde">SDE</option>
+                    <option value="da">DA</option>
+                    <option value="core">CORE</option>
+                </select>
+                <button class="btn" onclick="downloadCV()">Download CV</button>
+            </div>
+            <a id="downloadLink" style="display: none;" download></a> <!-- Hidden download link -->
+        </div>
+        <div class="home-img">
+            <img src="./about.jpg" alt="Photo" />
+        </div>
+    </section>
+    
+    <script>
+    function downloadCV() {
+        const cvSelect = document.getElementById('cvSelect');
+        const downloadLink = document.getElementById('downloadLink');
+    
+        let fileUrl = '';
+        switch (cvSelect.value) {
+            case 'sde':
+                fileUrl = 'https://drive.google.com/uc?export=download&id=1g498CNtkC4kFk6nXnadQUFUJ5cENZNDz'; // SDE CV link
+                downloadLink.download = 'SDE_CV.pdf';
+                break;
+            case 'da':
+                fileUrl = 'https://drive.google.com/uc?export=download&id=1aNPlIK3Qjs4k7mhDLk8RUdBqi2FIatG1'; // DA CV link
+                downloadLink.download = 'DA_CV.pdf';
+                break;
+            case 'core':
+                fileUrl = 'https://drive.google.com/uc?export=download&id=1d_3D8YXGZO8WXH-erJ_kd623KOgfzBrA'; // CORE CV link
+                downloadLink.download = 'CORE_CV.pdf';
+                break;
+            default:
+                alert('Please select a CV type.');
+                return;
+        }
+    
+        downloadLink.href = fileUrl;
+        downloadLink.click();
+    }
+    </script>
+    
+    <!-- About section -->
+    
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="./about.jpg" alt="About Me" />
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me!</span></h2>
+            <h3><span>Full Stack Developer!</span></h3>
+            <p>
+                "Welcome to my portfolio website! I'm Shravan Kumar, a passionate Full Stack Developer. I specialize in creating visually stunning and engaging experiences that push the boundaries of design and innovation. With a focus on attention to detail, effective communication, and user experience, I strive to deliver impactful solutions that inspire and captivate audiences. Thank you for visiting my portfolio, and I look forward to discussing how we can collaborate on bringing your ideas to life!"
+            </p>
+            <a href="./aboutme.html" class="btn">Read More</a>
+
+        </div>
+    </section>
+    <a href="https://drive.google.com/uc?export=download&id=1g498CNtkC4kFk6nXnadQUFUJ5cENZNDz" download="SDE_CV.pdf">
+    <button>SDE CV</button>
+</a>
+
+<a href="https://drive.google.com/uc?export=download&id=1aNPlIK3Qjs4k7mhDLk8RUdBqi2FIatG1" download="DA_CV.pdf">
+    <button>DA CV</button>
+</a>
+
+<a href="https://drive.google.com/uc?export=download&id=1d_3D8YXGZO8WXH-erJ_kd623KOgfzBrA" download="CORE_CV.pdf">
+    <button>CORE CV</button>
+</a>
+
+    <!-- Skill section -->
+    <section class="skills" id="skills">
+        <div class="skill-content">
+            <h2 class="heading">Skills</h2>
+        </div>
+        <div class="skill-container">
+            <div class="skill-box">
+                <i class='bx bxs-data' ></i>
+                <h3>DBMS</h3>
+                <p>Database Management Systems (DBMS) are software systems that enable the creation and management of databases.</p>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-c-plus-plus' ></i>
+                <h3>C++ Programming</h3>
+                <p>C++ is a cross-platform language that can be used to create high-performance applications.</p>
+            </div>
+            <div class="skill-box">
+                <i class="bx bxl-html5"></i>
+                <h3>HTML</h3>
+                <p>HTML is the most basic building block of the web, defining the meaning & structure of web content.</p>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-postgresql' ></i>
+                <h3>SQL</h3>
+                <p>SQL (Structured Query Language) is a standardized language for managing and manipulating databases.</p>
+            </div>
+            <div class="skill-box">
+                <i class="bx bxl-javascript"></i>
+                <h3>JavaScript</h3>
+                <p>JavaScript is a programming language, one of the core technologies of the WWW, alongside HTML and CSS.</p>
+            </div>
+            <div class="skill-box">
+                <i class="bx bxl-css3"></i>
+                <h3>CSS</h3>
+                <p>CSS is a designed language to simplify the process of making web pages presentable.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Project section -->
+<section class="project" id="project">
+    <div class="project-content">
+        <h2 class="heading">My <span>Projects.</span></h2>
+    </div>
+    <div class="project-container">
+        <!-- Portfolio Project -->
+        <div class="project-box">
+            <img src="./portfolio.png" alt="Portfolio" />
+            <div class="project-layer">
+                <h4>Portfolio</h4>
+                <p>This is a self-developed Portfolio to showcase my frontend skills.</p>
+                <a href="#home"><i class="bx bx-link-external"></i></a>
+            </div>
+        </div>
+        
+        <!-- Bookstore Project -->
+        <div class="project-box">
+            <img src="./bookstore.png" alt="Bookstore" />
+            <div class="project-layer">
+                <h4>Bookstore</h4>
+                <p>A fully-functional online bookstore application.</p>
+                <a href="https://ansh06.netlify.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+            </div>
+        </div>
+
+        <!-- Listify Market Project -->
+        <div class="project-box">
+            <img src="./listify.png" alt="Listify Market" />
+            <div class="project-layer">
+                <h4>Listify Market</h4>
+                <p>A responsive e-commerce frontend to showcase products.</p>
+                <a href="https://ansh6.netlify.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+            </div>
+        </div>
+
+        <!-- Stock Prediction Project -->
+        <div class="project-box">
+            <img src="./stock.png" alt="Stock Prediction" />
+            <div class="project-layer">
+                <h4>Stock Prediction</h4>
+                <p>A project for predicting stock prices using machine learning.</p>
+                <a href="https://github.com/shravankumar006/Stock-Analysis-Project.git" target="_blank"><i class="bx bx-link-external"></i></a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+    
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="https://formsubmit.co/shravankumar1458119@gmail.com" method="POST">
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display: none;">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://shravankumar0003.github.io/portfolio/submit.html">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" id="name" name="Name" required />
+                <input type="email" placeholder="Email Address" id="email" name="Email" required />
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number" id="num" name="Contact"/>
+                <input type="text" placeholder="Email Subject" id="sub" name="Subject" required />
+            </div>
+            <textarea name="Message" cols="30" rows="10" placeholder="Text Message" id="message" required></textarea>
+
+            <a><input type="submit" value="Send Message" class="btn"/></a>
+        </form>
+    </section>
+
+   <!-- Footer section -->
+<footer>
+    <div class="footer-content">
+        <p>© 2024 by Shravan Kumar | All Rights Reserved.</p>
+        <div class="footer-icons">
+            <a href="#home" title="Home"><i class="bx bx-home"></i></a>
+            <a href="https://github.com/shravankumar006" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/shravan-kumar-293659239/" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://twitter.com/Shravan05442443" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
